@@ -1,0 +1,27 @@
+#MoneyUI plugin by DeadBush
+#This plugin can be modified until the credits are given
+#Youtube: https://youtube.com/deadbush
+#For more plugins: https://github.com/deadbushmc
+
+#use § for colour code
+
+#Title
+title: "§l§6MoneyUI"
+
+#Buttons
+buttona: "§l§2My Money"
+
+buttonb: "§l§2Transfer Money"
+
+buttonc: "§l§2Top Money"
+
+buttonAdmin: "§l§2Admin"
+
+exit: "§l§4Exit"
+
+back: "§l§4Back"
+
+#Admin
+add: "§l§2Add Money"
+
+take: "§l§2Take Money"

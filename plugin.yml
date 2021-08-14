@@ -1,0 +1,12 @@
+name: MoneyUI
+main: DeadBush\MoneyUI\moneyui
+api: [3.0.0]
+version: 1.0
+author: DeadBush
+
+commands:
+  money:
+    description: "§4Manage Your Money Easily!"
+
+depend:
+- "EconomyAPI"
