@@ -124,11 +124,16 @@ class moneyui extends PluginBase implements Listener{
                 case 2:
                     $this->moneyui($sender);
                 break;
+                
+                case 3:
+                    $this->setmoney($player);
+                break;    
             }
         });
         $form->setTitle($this->getConfig()->get("title"));
         $form->addButton($this->getConfig()->get("add"));
         $form->addButton($this->getConfig()->get("take"));
+        $form->addButton($this->getConfig()->get("set"));
         $form->addButton($this->getConfig()->get("back"));
         $sender->sendForm($form);
         return $form;
@@ -154,6 +159,20 @@ class moneyui extends PluginBase implements Listener{
                 return true;
             }
             EconomyAPI::getinstance()->reduceMoney($data[0], $data[1]);
+        });
+        $form->setTitle($this->getConfig()->get("title"));
+        $form->addInput("§eEnter the player name");
+        $form->addInput("§eEnter the money amount");
+        $sender->sendForm($form);
+        return $form;
+    }
+    
+    public function setmoney($sender){
+        $form = new CustomForm(function (Player $player, array $data = null){
+            if($data === null){
+                return true;
+            }
+            EconomyAPI::getinstance()->setMoney($data[0], $data[1]);
         });
         $form->setTitle($this->getConfig()->get("title"));
         $form->addInput("§eEnter the player name");
