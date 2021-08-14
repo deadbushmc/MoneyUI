@@ -1,7 +1,7 @@
 # MoneyUI
 MoneyUI is a money management plugin for PocketMine-MP
 
-#Features
+# Features
 - See Money
 - Top Money
 - Transfer Money
@@ -10,8 +10,8 @@ Admin Panel:
 - Add Money
 - Remove Money
 
-#Commands
+# Commands
 /money
 
-#Permissions
+# Permissions
 money.admin (for admin panel)
