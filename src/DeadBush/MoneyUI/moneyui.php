@@ -25,8 +25,12 @@ class moneyui extends PluginBase implements Listener{
         switch($cmd->getName()){
             case "money":
                 if($sender instanceof Player){
-                    $this->moneyui($sender);
+                   if($player->hasPermission("admin.moneyui")){
+                    $this->adminmoneyui($sender);
                 }
+               }else{
+              $this->moneyui($sender);
+            }
         }
         return true;
     }
@@ -55,6 +59,42 @@ class moneyui extends PluginBase implements Listener{
                     }else{
                         $sender->sendMessage("§4You dont have permmission");
                     }
+                break;
+
+                case 4:
+                break;
+            }
+        });
+            
+        $form->setTitle($this->getConfig()->get("title"));
+        $form->addButton($this->getConfig()->get("buttona"));
+        $form->addButton($this->getConfig()->get("buttonb"));
+        $form->addButton($this->getConfig()->get("buttonc"));
+        $form->addButton($this->getConfig()->get("exit"));
+        $sender->sendForm($form);
+        return $form;
+    }
+
+public function adminmoneyui($sender){
+        $form = new SimpleForm(function (Player $sender, int $data = null){
+            if($data === null) {
+                return true;
+            }
+            switch($data) {
+                case 0:
+                    $this->playermoney($sender);
+                break;
+    
+                case 1:
+                    $this->transfer($sender);
+                break;
+
+                case 2:
+                    $this->getServer()->dispatchCommand($sender,"topmoney"); 
+                break;
+
+                case 3:
+                    $this->admin($sender);
                 break;
 
                 case 4:
